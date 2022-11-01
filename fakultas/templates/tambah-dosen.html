@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2><center>DATA DOSEN</center></h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            {% if pesan %}
+            <div class="alert alert-success">{{ pesan }}</div>
+            {% endif %}
+
+            <form action="/tambah-dosen/" method="post">
+                {% csrf_token %}
+
+                {{ form.as_p }}
+
+                <button class="btn btn-primary">Save</button>
+                <a href="/untirta/#datadosen" class="btn btn-danger">Kembali</a>
+            
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
